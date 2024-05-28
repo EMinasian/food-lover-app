@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import logoImage from "@/assets/logo.png";
 
 const headerNavigationItems = [
@@ -13,7 +14,7 @@ export default function MainHeader() {
         href="/"
         className="flex flex-row gap-4 items-center font-bold text-2xl text-white"
       >
-        <img src={logoImage.src} className="w-[10%]" />
+        <Image src={logoImage} alt="a dish of food" width={100} priority/>
         Home Page
       </Link>
 
