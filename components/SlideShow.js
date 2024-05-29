@@ -23,8 +23,6 @@ export default function SlideShow() {
     }, 5 * 1000);
   }, []);
 
-  console.log("index", index);
-
   return (
     <div className="p-20">
       <Image
