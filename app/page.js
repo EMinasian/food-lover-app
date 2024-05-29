@@ -1,14 +1,9 @@
-import Link from "next/link";
+import HeroBlock from "@/components/HeroBlock";
 
 export default function Home() {
   return (
     <main>
-      <h1 style={{ color: 'white', textAlign: 'center' }}>
-        Time to get started!
-      </h1>
-      <p><Link href="/meals">Meals Page</Link></p>
-      <p><Link href="/meals/share">Shate Page</Link></p>
-      <p><Link href="/community">Community Page</Link></p>
+      <HeroBlock />
     </main>
   );
 }
