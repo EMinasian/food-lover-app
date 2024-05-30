@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LinkComponent from "@/components/LinkComponent";
 import HeroBlock from "@/components/HeroBlock";
 
