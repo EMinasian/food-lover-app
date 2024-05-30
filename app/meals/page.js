@@ -12,7 +12,7 @@ export default function MealsPage() {
         >
           <LinkComponent
             type="primary"
-            href="/share"
+            href="/meals/share"
             text="Share Your Favorite Recipe"
           />
         </HeroBlock>

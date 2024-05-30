@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function HeroBlock({ heading, subHeading, children }) {
   return (
     <div className="flex flex-col p-24 gap-2">
