@@ -1,9 +1,11 @@
+import MealsItem from "./MealsItem";
+
 export default function MealsList({ meals }) {
   return (
     <ul>
       {meals.map((meal) => (
         <li>
-          <h2>{meal.title}</h2>
+          <MealsItem meal={meal} />
         </li>
       ))}
     </ul>
