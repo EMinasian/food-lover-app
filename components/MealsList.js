@@ -3,7 +3,7 @@ export default function MealsList({ meals }) {
     <ul>
       {meals.map((meal) => (
         <li>
-          <h2>{meal.name}</h2>
+          <h2>{meal.title}</h2>
         </li>
       ))}
     </ul>
