@@ -18,7 +18,7 @@ export default async function MealsPage() {
           text="Share Your Favorite Recipe"
         />
       </HeroBlock>
-      <MealsList meals={meals} />
+      <MealsList meals={meals} heading="Meals Overview"/>
     </main>
   );
 }
