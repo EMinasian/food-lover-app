@@ -1,11 +1,17 @@
+import { Suspense } from "react";
 import LinkComponent from "@/components/LinkComponent";
 import HeroBlock from "@/components/HeroBlock";
 import MealsList from "@/components/MealsList";
 import getMeals from "@/utils/getMeals";
+import LoadingComponent from "@/components/LoadingComponent";
 
-export default async function MealsPage() {
+async function Meals() {
   const meals = await getMeals();
 
+  return <MealsList meals={meals} heading="Meals Overview" />;
+}
+
+export default async function MealsPage() {
   return (
     <>
       <HeroBlock
@@ -18,7 +24,9 @@ export default async function MealsPage() {
           text="Share Your Favorite Recipe"
         />
       </HeroBlock>
-      <MealsList meals={meals} heading="Meals Overview"/>
+      <Suspense fallback={<LoadingComponent />}>
+        <Meals />
+      </Suspense>
     </>
   );
 }
