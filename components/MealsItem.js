@@ -1,12 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeadingComponent from "./HeadingComponent";
 
 export default function MealsItem({ meal }) {
   return (
-    <div className="bg-slate-800 p-4 m-4 rounded-2xl">
+    <div className="bg-slate-800 m-4 rounded-2xl">
       <Link href={`/meals/${meal?.slug}`}>
-        <HeadingComponent type="secondary">{meal?.title}</HeadingComponent>
-        <p className="text-white py-2">{meal?.summary}</p>
+        <div className="relative w-full aspect-square">
+          <Image
+            src={meal?.image}
+            fill
+            objectFit="contain"
+            className="rounded-t-2xl"
+          />
+        </div>
+        <div className="p-4">
+          <HeadingComponent type="secondary">{meal?.title}</HeadingComponent>
+          <p className="text-white py-2">{meal?.summary}</p>
+        </div>
       </Link>
     </div>
   );
