@@ -7,7 +7,7 @@ export default async function MealsPage() {
   const meals = await getMeals();
 
   return (
-    <main>
+    <>
       <HeroBlock
         heading="Meals Page"
         subHeading="choose your favorite recipe and cook it yourself!"
@@ -19,6 +19,6 @@ export default async function MealsPage() {
         />
       </HeroBlock>
       <MealsList meals={meals} heading="Meals Overview"/>
-    </main>
+    </>
   );
 }
