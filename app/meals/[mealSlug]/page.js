@@ -1,13 +1,14 @@
 import Image from "next/image";
 import getMeals from "@/utils/getMeals";
 import HeroBlock from "@/components/HeroBlock";
+import { notFound } from "next/navigation";
 
 function handleInstructionItems(instructions) {
-  const instruationsItems = instructions.split("\n\n");
-  console.log("instruationsItems", instruationsItems);
+  const instruationsItems = instructions?.split("\n\n");
+
   return (
     <ol className="w-2/3 mx-4 text-white flex flex-col gap-4">
-      {instruationsItems.map((item) => (
+      {instruationsItems?.map((item) => (
         <li>{item}</li>
       ))}
     </ol>
@@ -17,26 +18,28 @@ function handleInstructionItems(instructions) {
 export default async function DynamicPage({ params }) {
   const meal = await getMeals(params?.mealSlug);
 
-  console.log(meal.instructions);
+  if (!meal) {
+    notFound();
+  }
 
   return (
     <>
-      <HeroBlock heading={meal?.title} subHeading={meal.summary}>
+      <HeroBlock heading={meal?.title} subHeading={meal?.summary}>
         <span className="text-white">
           by{" "}
           <a
             className="text-orange-500 underline"
-            href={`mailto:${meal.creator_email}`}
+            href={`mailto:${meal?.creator_email}`}
           >
-            {meal.creator}
+            {meal?.creator}
           </a>
         </span>
       </HeroBlock>
       <div className="flex">
         <div className="w-1/4 aspect-square relative mx-4">
-          <Image src={meal.image} fill className="rounded-2xl" />
+          <Image src={meal?.image} fill className="rounded-2xl" />
         </div>
-        <div>{handleInstructionItems(meal.instructions)}</div>
+        <div>{handleInstructionItems(meal?.instructions)}</div>
       </div>
     </>
   );
