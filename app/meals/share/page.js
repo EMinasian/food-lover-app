@@ -1,4 +1,5 @@
 import HeroBlock from "@/components/HeroBlock";
+import ImagePicker from "@/components/ImagePicker";
 
 const labelStyle = "text-white flex flex-col font-semibold";
 const textareaStyle = "rounded-lg bg-gray-900 my-2 p-2";
@@ -66,10 +67,11 @@ export default function SharePage() {
               <textarea
                 type="text"
                 name="instructions"
-                className={`${textareaStyle} h-32 resize-none`}
+                className={`${textareaStyle} h-18 resize-none`}
                 required
               />
             </label>
+            <ImagePicker />
           </div>
         </div>
       </form>
