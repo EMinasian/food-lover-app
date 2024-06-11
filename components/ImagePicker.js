@@ -10,6 +10,7 @@ export default function ImagePicker() {
     const file = event.target.files[0];
 
     if (!file) {
+      setSelectedImage(null)
       return;
     }
 
