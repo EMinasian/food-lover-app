@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 export default function ImagePicker() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -42,7 +43,7 @@ export default function ImagePicker() {
       </label>
       {selectedImage && (
         <div className="p-8 border-2 border-orange-600 m-4 rounded-lg flex justify-center">
-          <img src={selectedImage} className="w-3/4" />
+          <Image src={selectedImage} fill className="w-3/4" />
         </div>
       )}
     </div>
