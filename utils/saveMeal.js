@@ -4,6 +4,7 @@ const db = sql("meals.db");
 import { getSlug } from "./prepareData";
 
 export default async function saveMeal(meal) {
+  await new Promise((resolve) => setTimeout(resolve, 3 * 1000)); //for learning purposes
   const slug = getSlug(meal.title);
   db.prepare(
     `
@@ -12,5 +13,5 @@ export default async function saveMeal(meal) {
         VALUES (@title, @summary, @instructions, @creator, @creator_email, @slug)
         `
   ).run({ ...meal, slug });
-  redirect(`/meals/${slug}`)
+  redirect(`/meals/${slug}`);
 }

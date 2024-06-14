@@ -1,4 +1,5 @@
 import ImagePicker from "@/components/ImagePicker";
+import SubmitButton from "./SubmitButton";
 const labelStyle = "text-white flex flex-col font-semibold";
 const textareaStyle = "rounded-lg bg-gray-900 my-2 p-2";
 const inputStyle = `${textareaStyle} h-8`;
@@ -10,12 +11,7 @@ export default function ShareForm({ action }) {
         <button type="reset" className="text-orange-500 p-2 m-2 font-semibold">
           Clear
         </button>
-        <button
-          type="submit"
-          className="bg-orange-700 py-2 px-8 m-2 text-white font-semibold rounded-md"
-        >
-          Save
-        </button>
+        <SubmitButton />
       </div>
       <div className="flex flex-row w-full">
         <div className="flex flex-col gap-6 w-1/3 p-8">
