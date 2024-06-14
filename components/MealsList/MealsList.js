@@ -1,5 +1,5 @@
 import MealsItem from "./MealsItem";
-import HeadingComponent from "./HeadingComponent";
+import HeadingComponent from "../HeadingComponent";
 
 export default function MealsList({ meals, heading }) {
   return (

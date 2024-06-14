@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import HeadingComponent from "./HeadingComponent";
+import HeadingComponent from "../HeadingComponent";
 import { DEFAULT_IMAGE_SLUG } from "@/utils/constants";
 
 export default function MealsItem({ meal }) {
