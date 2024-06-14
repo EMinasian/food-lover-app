@@ -1,6 +1,6 @@
 import HeroBlock from "@/components/HeroBlock";
 import ImagePicker from "@/components/ImagePicker";
-
+import shareAction from "./actions";
 const labelStyle = "text-white flex flex-col font-semibold";
 const textareaStyle = "rounded-lg bg-gray-900 my-2 p-2";
 const inputStyle = `${textareaStyle} h-8`;
@@ -12,7 +12,7 @@ export default function SharePage() {
         heading="Share Your Meals"
         subHeading="What meals do you like the most?"
       />
-      <form>
+      <form action={shareAction}>
         <div className="flex justify-end">
           <button
             type="reset"

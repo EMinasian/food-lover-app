@@ -2,6 +2,7 @@ import Image from "next/image";
 import getMeals from "@/utils/getMeals";
 import HeroBlock from "@/components/HeroBlock";
 import { notFound } from "next/navigation";
+import { DEFAULT_IMAGE_SLUG } from "@/utils/constants";
 
 function handleInstructionItems(instructions) {
   const instruationsItems = instructions?.split("\n\n");
@@ -37,7 +38,11 @@ export default async function DynamicPage({ params }) {
       </HeroBlock>
       <div className="flex">
         <div className="w-1/4 aspect-square relative mx-4">
-          <Image src={meal?.image} fill className="rounded-2xl" />
+          <Image
+            src={meal?.image || DEFAULT_IMAGE_SLUG}
+            fill
+            className="rounded-2xl"
+          />
         </div>
         <div>{handleInstructionItems(meal?.instructions)}</div>
       </div>

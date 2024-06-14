@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeadingComponent from "./HeadingComponent";
+import { DEFAULT_IMAGE_SLUG } from "@/utils/constants";
 
 export default function MealsItem({ meal }) {
   return (
@@ -8,7 +9,7 @@ export default function MealsItem({ meal }) {
       <Link href={`/meals/${meal?.slug}`}>
         <div className="relative w-full aspect-square">
           <Image
-            src={meal?.image}
+            src={meal?.image || DEFAULT_IMAGE_SLUG}
             fill
             objectFit="contain"
             className="rounded-t-2xl"
