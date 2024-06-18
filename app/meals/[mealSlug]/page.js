@@ -18,6 +18,11 @@ function handleInstructionItems(instructions) {
 
 export async function generateMetadata({ params }) {
   const meal = await getMeals(params?.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+
   return {
     title: meal?.title,
     description: meal?.summary,
