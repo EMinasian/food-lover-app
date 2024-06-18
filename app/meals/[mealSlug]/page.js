@@ -16,7 +16,15 @@ function handleInstructionItems(instructions) {
   );
 }
 
-export default async function DynamicPage({ params }) {
+export async function generateMetadata({ params }) {
+  const meal = await getMeals(params?.mealSlug);
+  return {
+    title: meal?.title,
+    description: meal?.summary,
+  };
+}
+
+export default async function MealPage({ params }) {
   const meal = await getMeals(params?.mealSlug);
 
   if (!meal) {
