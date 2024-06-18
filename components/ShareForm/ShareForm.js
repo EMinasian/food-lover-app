@@ -24,7 +24,7 @@ export default function ShareForm({ action }) {
         <div className="flex flex-col gap-6 w-1/3 p-8">
           <label className={labelStyle}>
             Your name
-            <input type="text" name="creator" className={inputStyle} />
+            <input type="text" name="creator" className={inputStyle} required/>
           </label>
           <label className={labelStyle}>
             Your email address
