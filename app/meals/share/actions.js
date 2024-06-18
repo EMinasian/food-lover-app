@@ -5,7 +5,7 @@ function fieldsInvalid(fields) {
   return fields?.some((filed) => !filed || filed?.trim() === "");
 }
 
-export default async function shareAction(formData) {
+export default async function shareAction(prevstate, formData) {
   const meal = {
     creator: formData.get("creator"),
     creator_email: formData.get("creator_email"),
@@ -15,7 +15,7 @@ export default async function shareAction(formData) {
   };
 
   if (fieldsInvalid(Object.values(meal))) {
-    throw new Error("The fileds in the form are invalid.");
+    return { message: "error" };
   }
 
   await saveMeal(meal);
