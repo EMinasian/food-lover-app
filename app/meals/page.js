@@ -5,6 +5,11 @@ import MealsList from "@/components/MealsList";
 import getMeals from "@/utils/getMeals";
 import LoadingComponent from "@/components/LoadingComponent";
 
+export const metadata = {
+  title: "Meals",
+  description: "Meals overview.",
+};
+
 async function Meals() {
   const meals = await getMeals();
 
